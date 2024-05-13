@@ -1,3 +1,6 @@
+That's right! Killer 7 Multiplayer!
+Pick a Smile or a Smith then Hajime!
+
 This Unreal Project is using version 4.25.4 !
 
 Under "play":

@@ -3,6 +3,16 @@
 	"EngineAssociation": "{EEC7480E-D0F5-449D-9947-E240BD7C17D6}",
 	"Category": "",
 	"Description": "",
+	"Modules": [
+		{
+			"Name": "K7_Style_Multiplayer",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
+		}
+	],
 	"Plugins": [
 		{
 			"Name": "OculusVR",

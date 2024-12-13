@@ -1,0 +1,42 @@
+[
+	{
+		"file": "/home/h/Documents/Unreal Projects/K7-M/Source/K7_Style_Multiplayer/K7_Style_Multiplayer.Build.cs",
+		"arguments": [
+			"/run/media/h/1bbda0cd-5a96-47bd-a886-878689113cc1/github/UnrealEngine-5.4.4-release/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v22_clang-16.0.6-centos7/x86_64-unknown-linux-gnu/bin/clang++",
+			"@/home/h/Documents/Unreal Projects/K7-M/.vscode/compileCommands_Default/K7_Style_Multiplayer.1.rsp"
+		],
+		"directory": "/run/media/h/1bbda0cd-5a96-47bd-a886-878689113cc1/github/UnrealEngine-5.4.4-release/Engine/Source"
+	},
+	{
+		"file": "/home/h/Documents/Unreal Projects/K7-M/Source/K7_Style_Multiplayer/K7_Style_Multiplayer.cpp",
+		"arguments": [
+			"/run/media/h/1bbda0cd-5a96-47bd-a886-878689113cc1/github/UnrealEngine-5.4.4-release/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v22_clang-16.0.6-centos7/x86_64-unknown-linux-gnu/bin/clang++",
+			"@/home/h/Documents/Unreal Projects/K7-M/.vscode/compileCommands_Default/K7_Style_Multiplayer.1.rsp"
+		],
+		"directory": "/run/media/h/1bbda0cd-5a96-47bd-a886-878689113cc1/github/UnrealEngine-5.4.4-release/Engine/Source"
+	},
+	{
+		"file": "/home/h/Documents/Unreal Projects/K7-M/Source/K7_Style_Multiplayer/K7_Style_Multiplayer.h",
+		"arguments": [
+			"/run/media/h/1bbda0cd-5a96-47bd-a886-878689113cc1/github/UnrealEngine-5.4.4-release/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v22_clang-16.0.6-centos7/x86_64-unknown-linux-gnu/bin/clang++",
+			"@/home/h/Documents/Unreal Projects/K7-M/.vscode/compileCommands_Default/K7_Style_Multiplayer.1.rsp"
+		],
+		"directory": "/run/media/h/1bbda0cd-5a96-47bd-a886-878689113cc1/github/UnrealEngine-5.4.4-release/Engine/Source"
+	},
+	{
+		"file": "/home/h/Documents/Unreal Projects/K7-M/Source/K7_Style_Multiplayer/cPlayer.cpp",
+		"arguments": [
+			"/run/media/h/1bbda0cd-5a96-47bd-a886-878689113cc1/github/UnrealEngine-5.4.4-release/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v22_clang-16.0.6-centos7/x86_64-unknown-linux-gnu/bin/clang++",
+			"@/home/h/Documents/Unreal Projects/K7-M/.vscode/compileCommands_Default/K7_Style_Multiplayer.1.rsp"
+		],
+		"directory": "/run/media/h/1bbda0cd-5a96-47bd-a886-878689113cc1/github/UnrealEngine-5.4.4-release/Engine/Source"
+	},
+	{
+		"file": "/home/h/Documents/Unreal Projects/K7-M/Source/K7_Style_Multiplayer/cPlayer.h",
+		"arguments": [
+			"/run/media/h/1bbda0cd-5a96-47bd-a886-878689113cc1/github/UnrealEngine-5.4.4-release/Engine/Extras/ThirdPartyNotUE/SDKs/HostLinux/Linux_x64/v22_clang-16.0.6-centos7/x86_64-unknown-linux-gnu/bin/clang++",
+			"@/home/h/Documents/Unreal Projects/K7-M/.vscode/compileCommands_Default/K7_Style_Multiplayer.1.rsp"
+		],
+		"directory": "/run/media/h/1bbda0cd-5a96-47bd-a886-878689113cc1/github/UnrealEngine-5.4.4-release/Engine/Source"
+	}
+]

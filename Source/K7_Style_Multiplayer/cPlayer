@@ -1,0 +1,208 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "GameFramework/Character.h"
+#include "cPlayer.generated.h"
+
+UCLASS()
+class K7_STYLE_MULTIPLAYER_API AcPlayer : public ACharacter
+{
+	GENERATED_BODY()
+
+public:
+	// Sets default values for this character's properties
+	AcPlayer();
+
+protected:
+	// Called when the game starts or when spawned
+	virtual void BeginPlay() override;
+
+public:	
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+
+	// Called to bind functionality to input
+	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+public:
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
+	double BaseTurnRate;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
+	double BaseLookUpRate;
+
+	/** Please add a variable description */
+	static_assert(false, "You will need to add DOREPLIFETIME(ABasePlayer, current rail path) to GetLifetimeReplicatedProps");
+	UPROPERTY(BlueprintReadWrite, EditInstanceOnly, Category="Networked movement", Replicated, meta=(MultiLine="true"))
+	TObjectPtr<AcRail_Path> current_rail_path;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default", meta=(MultiLine="true"))
+	double current_path_distance;
+
+	/** Please add a variable description */
+	static_assert(false, "You will need to add DOREPLIFETIME(ABasePlayer, forwards) to GetLifetimeReplicatedProps");
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Networked movement", Replicated, meta=(MultiLine="true"))
+	bool forwards;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default", meta=(MultiLine="true"))
+	bool last_forwards;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="My Character", meta=(MultiLine="true"))
+	double STAT_speed;
+
+	/** Please add a variable description */
+	static_assert(false, "You will need to add DOREPLIFETIME(ABasePlayer, 1p) to GetLifetimeReplicatedProps");
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Networked movement", Replicated, meta=(MultiLine="true"))
+	bool 1p;
+
+	/** Please add a variable description */
+	static_assert(false, "You will need to add DOREPLIFETIME(ABasePlayer, attack and confirm) to GetLifetimeReplicatedProps");
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(Fattack and confirm);
+	UPROPERTY(BlueprintAssignable, EditDefaultsOnly, Category="Default", Replicated, meta=(MultiLine="true"))
+	Fattack_and_confirm_attack_and_confirm;
+
+	/** Please add a variable description */
+	static_assert(false, "You will need to add DOREPLIFETIME(ABasePlayer, aim rotation) to GetLifetimeReplicatedProps");
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Networked movement", Replicated, meta=(MultiLine="true"))
+	FRotator aim_rotation;
+
+	/** Please add a variable description */
+	static_assert(false, "You will need to add DOREPLIFETIME(ABasePlayer, hit points) to GetLifetimeReplicatedProps");
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="My Character", Replicated, meta=(MultiLine="true", ClampMin="0", ClampMax="51", UIMin="0", UIMax="51"))
+	int32 hit_points;
+
+	/** Please add a variable description */
+	static_assert(false, "You will need to add DOREPLIFETIME(ABasePlayer, sweet spot) to GetLifetimeReplicatedProps");
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Networked movement", Replicated, meta=(MultiLine="true"))
+	FName sweet_spot;
+
+	/** Please add a variable description */
+	static_assert(false, "You will need to add DOREPLIFETIME(ABasePlayer, dead) to GetLifetimeReplicatedProps");
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Networked movement", Replicated, meta=(MultiLine="true"))
+	bool dead;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default", meta=(MultiLine="true"))
+	double sweet_spot_radius;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="My Character", meta=(MultiLine="true"))
+	int32 start_hitpoints;
+
+	/** Please add a variable description */
+	static_assert(false, "You will need to add DOREPLIFETIME(ABasePlayer, firing) to GetLifetimeReplicatedProps");
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Networked movement", Replicated, meta=(MultiLine="true"))
+	bool firing;
+
+	/** Please add a variable description */
+	static_assert(false, "You will need to add DOREPLIFETIME(ABasePlayer, movement lock) to GetLifetimeReplicatedProps");
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Networked movement", Replicated, meta=(MultiLine="true"))
+	bool movement_lock;
+
+	/** Please add a variable description */
+	static_assert(false, "You will need to add DOREPLIFETIME(ABasePlayer, current move axis) to GetLifetimeReplicatedProps");
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default", Replicated, meta=(MultiLine="true", ClampMin="-1", ClampMax="1"))
+	double current_move_axis;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default", meta=(MultiLine="true"))
+	bool use 1p_mesh_mode;
+
+	/** Please add a variable description */
+	static_assert(false, "You will need to add DOREPLIFETIME(ABasePlayer, server look axis) to GetLifetimeReplicatedProps");
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Networked movement", Replicated, meta=(MultiLine="true"))
+	FVector2D server_look_axis;
+
+	/** Please add a variable description */
+	static_assert(false, "You will need to add DOREPLIFETIME(ABasePlayer, valid sweet spots) to GetLifetimeReplicatedProps");
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default", Replicated, meta=(MultiLine="true"))
+	TArray<FName> valid_sweet_spots;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="My Character", meta=(MultiLine="true"))
+	int32 blood_count;
+
+	/** Please add a variable description */
+	static_assert(false, "You will need to add DOREPLIFETIME(ABasePlayer, timestamp) to GetLifetimeReplicatedProps");
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Networked movement", Replicated, meta=(MultiLine="true"))
+	double timestamp;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="My Character", meta=(MultiLine="true"))
+	double gun_delay;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default", meta=(MultiLine="true"))
+	double cooldown_aim;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="My Character", meta=(MultiLine="true"))
+	TObjectPtr<UClass> projectile;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="My Character", meta=(MultiLine="true"))
+	double special_delay;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="My Character", meta=(MultiLine="true"))
+	TObjectPtr<UClass> special;
+
+	/** Please add a variable description */
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(Fdied);
+	UPROPERTY(BlueprintAssignable, EditDefaultsOnly, Category="Default", meta=(MultiLine="true"))
+	Fdied died;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="My Character", meta=(MultiLine="true"))
+	TObjectPtr<UClass> rail_spawn_class;
+
+	/** Please add a variable description */
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(Frespawned);
+	UPROPERTY(BlueprintAssignable, EditDefaultsOnly, Category="Default", meta=(MultiLine="true"))
+	Frespawned respawned;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="sounds", meta=(MultiLine="true"))
+	TObjectPtr<USoundBase> critical_one_liner;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Sounds", meta=(MultiLine="true"))
+	TObjectPtr<USoundBase> damage_sound;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Sounds", meta=(MultiLine="true"))
+	TObjectPtr<USoundBase> death_sound;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="sounds", meta=(MultiLine="true"))
+	TObjectPtr<USoundBase> ready_weapon_sound;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="sounds", meta=(MultiLine="true"))
+	TObjectPtr<USoundBase> respawn_sound;
+
+	/** Please add a variable description */
+	static_assert(false, "You will need to add DOREPLIFETIME(ABasePlayer, team) to GetLifetimeReplicatedProps");
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="My Character", Replicated, meta=(MultiLine="true"))
+	TEnumAsByte<EnumTeam> team;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default", meta=(MultiLine="true"))
+	double respawn_time;
+
+	/** Please add a variable description */
+	static_assert(false, "You will need to add DOREPLIFETIME(ABasePlayer, damaged stun) to GetLifetimeReplicatedProps");
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default", Replicated, meta=(MultiLine="true"))
+	bool damaged_stun;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default")
+	TObjectPtr<UMaterialInstanceDynamic> Photo;
+
+};

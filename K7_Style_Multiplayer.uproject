@@ -152,6 +152,10 @@
 				"Mac",
 				"Win64"
 			]
+		},
+		{
+			"Name": "StudioTelemetry",
+			"Enabled": false
 		}
 	]
 }

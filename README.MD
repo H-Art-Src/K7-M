@@ -1,6 +1,6 @@
 Killer 7 Multiplayer
 
-This Unreal Project is using version 4.25.4
+This Unreal Project is using version 5.4.4
 
 Under "play":
 ->Net mode to "Listen Server" with number of players to two or more.

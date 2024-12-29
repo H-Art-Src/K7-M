@@ -1,4 +1,4 @@
-# Visual Studio 2015 user specific files
+c# Visual Studio 2015 user specific files
 .vs/
 
 # Compiled Object files
@@ -82,4 +82,7 @@ Saved/Config/Windows/EditorPerProjectUserSettings.ini
 Saved/Logs/DeadGaem.log
 Saved/Config/Windows/EditorPerProjectUserSettings.ini
 K7_Style_Multiplayer.uproject
-/Content/Maps/747
+
+.ignore
+.vscode/*
+*.code-workspace

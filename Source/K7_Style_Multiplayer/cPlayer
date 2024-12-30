@@ -35,7 +35,7 @@ public:
 	/** Please add a variable description */
 	static_assert(false, "You will need to add DOREPLIFETIME(ABasePlayer, current_rail_path) to GetLifetimeReplicatedProps");
 	UPROPERTY(BlueprintReadWrite, EditInstanceOnly, Category="Networked Status", Replicated, meta=(MultiLine="true"))
-	TObjectPtr<Arail_path_C> current_rail_path;
+	TObjectPtr<Arail_path> current_rail_path;
 
 	/** Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default", meta=(MultiLine="true"))

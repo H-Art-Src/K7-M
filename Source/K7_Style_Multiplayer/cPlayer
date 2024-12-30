@@ -15,6 +15,14 @@ public:
 	/** Please add a function description */
 	UFUNCTION(BlueprintPure)
 	void fire_point_transform(FRotator World_Rotation, FTransform& Out_Transform);
+
+	/** Please add a function description */
+	UFUNCTION(BlueprintCallable)
+	void initialize_hud();
+
+	/** Please add a function description */
+	UFUNCTION(BlueprintPure)
+	void instigator_can_damage(ABasePlayer_C* instigator, bool& hurts);
 public:
 	/** Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Settings")
@@ -27,7 +35,7 @@ public:
 	/** Please add a variable description */
 	static_assert(false, "You will need to add DOREPLIFETIME(ABasePlayer, current_rail_path) to GetLifetimeReplicatedProps");
 	UPROPERTY(BlueprintReadWrite, EditInstanceOnly, Category="Networked Status", Replicated, meta=(MultiLine="true"))
-	TObjectPtr<Arail_path> current_rail_path;
+	TObjectPtr<Arail_path_C> current_rail_path;
 
 	/** Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default", meta=(MultiLine="true"))

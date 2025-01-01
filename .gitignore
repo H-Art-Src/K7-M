@@ -86,3 +86,5 @@ K7_Style_Multiplayer.uproject
 .ignore
 .vscode/*
 *.code-workspace
+
+Makefile

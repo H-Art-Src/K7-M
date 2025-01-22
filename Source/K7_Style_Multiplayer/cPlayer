@@ -25,6 +25,46 @@ public:
 	void instigator_can_damage(ABasePlayer_C* instigator, bool& hurts);
 public:
 	/** Please add a variable description */
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category="Components")
+	TObjectPtr<UPointLightComponent> flash_photography_light;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category="Components")
+	TObjectPtr<USceneCaptureComponent2D> avatar_capture;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category="Components")
+	TObjectPtr<UStaticMeshComponent> sweet_spot_particle;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category="Components")
+	TObjectPtr<UStaticMeshComponent> first_person_mesh;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category="Components")
+	TObjectPtr<UArrowComponent> Arrow1;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category="Components")
+	TObjectPtr<UBillboardComponent> billboard;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category="Components")
+	TObjectPtr<USkeletalMeshComponent> first_person_skeletal_mesh;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category="Components")
+	TObjectPtr<UCameraComponent> first_person_camera;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category="Components")
+	TObjectPtr<UCameraComponent> follow_camera;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category="Components")
+	TObjectPtr<USpringArmComponent> camera_boom;
+
+	/** Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Settings")
 	double BaseTurnRate;
 
@@ -35,7 +75,7 @@ public:
 	/** Please add a variable description */
 	static_assert(false, "You will need to add DOREPLIFETIME(ABasePlayer, current_rail_path) to GetLifetimeReplicatedProps");
 	UPROPERTY(BlueprintReadWrite, EditInstanceOnly, Category="Networked Status", Replicated, meta=(MultiLine="true"))
-	TObjectPtr<Arail_path> current_rail_path;
+	TObjectPtr<Arail_path_C> current_rail_path;
 
 	/** Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default", meta=(MultiLine="true"))
@@ -87,6 +127,10 @@ public:
 	bool dead;
 
 	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Attributes")
+	int32 max_ammo;
+
+	/** Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Attributes", meta=(MultiLine="true"))
 	int32 start_hitpoints;
 
@@ -95,9 +139,9 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Networked Status", Replicated, meta=(MultiLine="true"))
 	bool firing;
 
-	/** Please add a variable description */
+	/** Stops movement, NOT to be used in child classes. For rail path changes */
 	static_assert(false, "You will need to add DOREPLIFETIME(ABasePlayer, movement_lock) to GetLifetimeReplicatedProps");
-	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Networked Status", Replicated, meta=(MultiLine="true"))
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Networked Status", Replicated, meta=(MultiLine="true"))
 	bool movement_lock;
 
 	/** Please add a variable description */
@@ -194,6 +238,11 @@ public:
 	double sweet_spot_radius;
 
 	/** Please add a variable description */
+	static_assert(false, "You will need to add DOREPLIFETIME(ABasePlayer, loaded_ammo) to GetLifetimeReplicatedProps");
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Attributes (replicated)", Replicated)
+	int32 loaded_ammo;
+
+	/** Please add a variable description */
 	static_assert(false, "You will need to add DOREPLIFETIME(ABasePlayer, team) to GetLifetimeReplicatedProps");
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Attributes (replicated)", Replicated, meta=(MultiLine="true"))
 	TEnumAsByte<EnumTeam> team;
@@ -210,4 +259,23 @@ public:
 	/** Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default")
 	TObjectPtr<UMaterialInstanceDynamic> Photo;
+
+	/** Please add a variable description */
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(Fwent_first_person);
+	UPROPERTY(BlueprintAssignable, EditDefaultsOnly, Category="Default")
+	Fwent_first_person went_first_person;
+
+	/** Please add a variable description */
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(Fdamaged);
+	UPROPERTY(BlueprintAssignable, EditDefaultsOnly, Category="Default")
+	Fdamaged damaged;
+
+	/** Please add a variable description */
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE(Fserver_interact_dispatch);
+	UPROPERTY(BlueprintAssignable, EditDefaultsOnly, Category="Default")
+	Fserver_interact_dispatch server_interact_dispatch;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Attributes")
+	float ammo_recharge_rate;
 };

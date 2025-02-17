@@ -88,3 +88,5 @@ K7_Style_Multiplayer.uproject
 *.code-workspace
 
 Makefile
+.vsconfig
+UpgradeLog.htm

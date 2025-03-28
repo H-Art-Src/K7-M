@@ -25,6 +25,18 @@ public:
 	void instigator_can_damage(ABasePlayer_C* instigator, bool& hurts);
 public:
 	/** Please add a variable description */
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category="Default")
+	TObjectPtr<UCameraComponent> ground_ref;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category="Components")
+	TObjectPtr<USpringArmComponent> camera_boom;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category="Default")
+	TObjectPtr<UCapsuleComponent> boom_capsule;
+
+	/** Please add a variable description */
 	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category="Components")
 	TObjectPtr<UPointLightComponent> flash_photography_light;
 
@@ -59,10 +71,6 @@ public:
 	/** Please add a variable description */
 	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category="Components")
 	TObjectPtr<UCameraComponent> follow_camera;
-
-	/** Please add a variable description */
-	UPROPERTY(BlueprintReadOnly, VisibleAnywhere, Category="Components")
-	TObjectPtr<USpringArmComponent> camera_boom;
 
 	/** Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Settings")
@@ -257,6 +265,10 @@ public:
 	bool stunned;
 
 	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
+	bool 3p_camera_forwards;
+
+	/** Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Default")
 	TObjectPtr<UMaterialInstanceDynamic> Photo;
 
@@ -278,4 +290,16 @@ public:
 	/** Please add a variable description */
 	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Attributes")
 	float ammo_recharge_rate;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
+	FRotator boom_capsule_rotation;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
+	FTransform start_3p_transform;
+
+	/** Please add a variable description */
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category="Default")
+	FTransform start_3p_transform_ground;
 };
